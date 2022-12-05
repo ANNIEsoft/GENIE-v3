@@ -18,7 +18,7 @@ export PYTHIA6_LIBRARY=${Gapp}/Pythia6Support/v6_424/lib/
 
 export LHAPATH=${Gapp}/LHAPDF-6.3.0/install/share/LHAPDF:${LHAPATH}
 
-export GENIE=${Gapp}/Generator-3_00_04_ub3-master
+export GENIE=${Gapp}/Generator-v3_00_04_ub3-master
 
 export PATH=.:${Gapp}/fsplit/:${ROOTSYS}/bin:${Gapp}/LHAPDF-6.3.0/install/bin:${GENIE}/install/bin:${PATH}
 
