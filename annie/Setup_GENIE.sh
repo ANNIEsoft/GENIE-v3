@@ -26,4 +26,6 @@ export MANPATH=${ROOTSYS}/bin:${MANPATH}
 
 export PYTHONPATH=${ROOTSYS}/lib:${PYTHONPATH}
 
-export GENIEXSECFILE=${GENIE}/annie/gxspl-FNALsmall.xml
+#cannot include file in GitHub, too large
+#set the path via the wrapper script
+#export GENIEXSECFILE=${GENIE}/annie/gxspl-FNALsmall.xml
