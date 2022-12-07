@@ -1,3 +1,36 @@
+# Important Information Regarding ANNIE GENIE container
+
+Before using this container, make note of the supplementary scripts located in the `annie` directory. In order to properly use this container please set up the environment:
+`source annie/Setup_GENIE.sh`
+
+Before running the Generator, please make sure you have the following files:
+
+Detector geometry file - `annie_v04.gdml` - not included in this container - please include in your working directory
+
+Flux files - `gsimple_beammc_annie_????.root` - can be found on GPVM: `/annie/data/flux/gsimple_bnb/` - a smaller subsection can be used from a separate local directory
+
+Cross Section file - `gxspl-FNALsmall.xml` - can be found through LArSoft: `/cvmfs/larsoft.opensciencegrid.org/products/genie_xsec/v3_00_04_ub2/NULL/G1810a0211a-k250-e1000/data/gxspl-FNALsmall.xml` - this specific file is used as to allow for joint analysis with MicroBooNE
+
+Wrapper script - `run_annie_genie.sh` - included in `annie` directory
+
+## How to run Generator
+
+When the environment has been set up, and all necessary files are present/found by the wrapper, run the wrapper script, `run_annie_genie.sh`. Necessary arguments include:
+<pre>
+-n [int] : number of events
+-f [path to and including flux files]
+-x [path to and including cross section file] : is set by $GENIEXSECFILE
+-r [int] : run number
+--seed [int] : seed
+--topvol [TWATER_LV | WORLD_LV | BLDG_LV | EXP_HALL_LV] : event volume
+--tune [string] : viable tune parameter for GENIE
+</pre>
+
+Additional arguments can be found by running `./run_annie_genie.sh -h`
+
+Here is an example command (assuming local copies of `annie_v04.gdml` and `gxspl-FNALsmall.xml`):
+`./run_annie_genie.sh -r 0 -n 1000 -f /annie/data/flux/gsimple_bnb/gsimple_beammc_annie_00*.root -x gxspl-FNALsmall.xml --seed 42 --topvol TWATER_LV --tune G18_10a_02_11a`
+
 # The GENIE Event Generator
 
 The GENIE Generator product is an advanced physics simulation used by nearly all modern neutrino experiments and 
