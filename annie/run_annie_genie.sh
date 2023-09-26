@@ -38,7 +38,7 @@ export FLXPSET="ANNIE-tank"
 export FLXFILES=/annie/data/flux/gsimple_bnb/gsimple_beammc_annie_*.root
 
 export GDML=annie_v04.gdml
-export UNITS="-L cm -D g_cm3"
+export UNITS="-L mm -D g_cm3"
 
 export GENLIST="" # equivalent to "Default"
 
